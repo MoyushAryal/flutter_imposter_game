@@ -20,7 +20,7 @@ class _PlayerRevealScreenState extends State<PlayerRevealScreen> {
   @override
   void initState() {
     super.initState();
-    // Get current player based on index
+  
     _currentPlayer = widget.game.players[widget.game.currentPlayerIndex];
   }
 
@@ -150,7 +150,7 @@ class _PlayerRevealScreenState extends State<PlayerRevealScreen> {
   
   void _goToNextPlayer() {
     if (widget.game.currentPlayerIndex < widget.game.totalPlayers - 1) {
-      // Move to next player
+ 
       widget.game.currentPlayerIndex++;
       
       Navigator.pushReplacement(
@@ -162,7 +162,7 @@ class _PlayerRevealScreenState extends State<PlayerRevealScreen> {
         ),
       );
     } else {
-      // All players have seen their cards - go to game start
+   
       _startGameDiscussion();
     }
   }
@@ -227,7 +227,7 @@ class _PlayerRevealScreenState extends State<PlayerRevealScreen> {
                   ),
                   child: ElevatedButton(
                     onPressed: () {
-                      // Start discussion/timer screen (you'll create this next)
+                      
                       print('Starting discussion round');
                     },
                     style: ElevatedButton.styleFrom(
@@ -290,7 +290,7 @@ class _PlayerRevealScreenState extends State<PlayerRevealScreen> {
   }
   
   Widget _buildCardFront() {
-    // Get list of other imposters (for imposter players)
+    
     List<String> otherImposters = [];
     if (_currentPlayer.isImposter) {
       otherImposters = widget.game.players

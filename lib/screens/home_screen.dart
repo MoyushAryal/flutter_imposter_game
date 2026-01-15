@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Title with neon effect
+            
             ShaderMask(
               shaderCallback: (bounds) {
                 return LinearGradient(

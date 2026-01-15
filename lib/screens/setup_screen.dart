@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'player_reveal_screen.dart';
-import '../models/game.dart';  // Import your Game model
+import '../models/game.dart';
 import './player_reveal_screen.dart';
 class SetupScreen extends StatefulWidget {
   const SetupScreen({Key? key}) : super(key: key);
@@ -13,7 +13,6 @@ class _SetupScreenState extends State<SetupScreen> {
   double _playersCount = 6.0;
   double _impostersCount = 2.0;
 
-  // List of secret words
   final List<String> _secretWords = [
     'ELEPHANT', 'PYRAMID', 'SPACESHIP', 'CHOCOLATE', 'VOLCANO',
     'BUTTERFLY', 'MICROSCOPE', 'TELESCOPE', 'HURRICANE', 'JELLYFISH',
@@ -44,7 +43,7 @@ class _SetupScreenState extends State<SetupScreen> {
             
             const Spacer(),
             
-            // Title
+       
             ShaderMask(
               shaderCallback: (bounds) {
                 return LinearGradient(
@@ -117,7 +116,7 @@ class _SetupScreenState extends State<SetupScreen> {
                   // Create the game
                   final game = _createGame();
                   
-                  // Navigate to first player
+                 
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -160,7 +159,7 @@ class _SetupScreenState extends State<SetupScreen> {
     );
   }
   
-  // Function to create a new game
+
   Game _createGame() {
     final playerCount = _playersCount.toInt();
     final imposterCount = _impostersCount.toInt();
@@ -174,7 +173,6 @@ class _SetupScreenState extends State<SetupScreen> {
       );
     });
     
-    // Shuffle to randomize imposter positions
     players.shuffle();
     
     // Get random secret word
